@@ -60,22 +60,18 @@ default_category: 前端
 category_map: 
    前端: front-end
    后台: back-end
-   设计: product-design
+   资源: product-design
    其他: others
 tag_map: 
-  iOS: iOS
+  Vue: Vue
   hexo: hexo
-  swift: swift
-  golang: golang
-  sketch: sketch
-  zeplin: zeplin
+  node: node
   网站: website
   后台: serverSide
   JavaScript: javascript
   ReactNative: RN
-  Mac必备工具: MacTools
-  跨平台: CrossPlatform
-  黑科技: CoolTech
+  jQuery: jq
+  
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in

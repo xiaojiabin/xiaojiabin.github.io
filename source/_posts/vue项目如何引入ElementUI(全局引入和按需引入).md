@@ -5,7 +5,7 @@ avatar: /images/favicon.png
 authorDesc: 充满正能量的骚年 
 categories: 前端
 tags: 
-  - javascript 
+  - Vue
 ---
 
 **摘要:**本篇文章主要是在官网上通过学习,参照官网写的一点小心得,仅供参考!
