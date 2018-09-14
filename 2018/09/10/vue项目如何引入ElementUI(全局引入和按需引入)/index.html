@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="JIABIN&#39;S BLOG">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://xiaojiabin.github.io">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>vue项目如何引入ElementUI(全局引入和按需引入) | JIABIN&#39;S BLOG</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="JIABIN&#39;S BLOG" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.png">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Jiabin'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 阿斌的博客 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://xiaojiabin.github.io">JIABIN&#39;S BLOG</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/front/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/back/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tools/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="vue项目如何引入ElementUI(全局引入和按需引入)">
+            
+	            vue项目如何引入ElementUI(全局引入和按需引入)
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/前端">
+            前端
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javascript" title='javascript'>
+                        javascript
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/09/10</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><strong>摘要:</strong>本篇文章主要是在官网上通过学习,参照官网写的一点小心得,仅供参考!</p>
+<h2 id="通过npm安装element-ui模块"><a href="#通过npm安装element-ui模块" class="headerlink" title="通过npm安装element-ui模块"></a>通过npm安装element-ui模块</h2><p><code>npm i element-ui -S</code></p>
+<h2 id="在代码中引入"><a href="#在代码中引入" class="headerlink" title="在代码中引入"></a>在代码中引入</h2><h4 id="完整引入"><a href="#完整引入" class="headerlink" title="完整引入"></a>完整引入</h4><p>在main.js中写入以下内容<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import ElementUI from &apos;element-ui&apos;;</span><br><span class="line">import &apos;element-ui/lib/theme-chalk/index.css&apos;;//样式文件一定要引入</span><br><span class="line">import App from &apos;./App.vue&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI);</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="按需引入"><a href="#按需引入" class="headerlink" title="按需引入"></a>按需引入</h4><p>首先，安装 babel-plugin-component:</p>
+<p><code>npm install babel-plugin-component -D</code></p>
+<p>然后，将 .babelrc 修改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;modules&quot;: false,</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;not ie &lt;= 8&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    &quot;stage-2&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;component&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;libraryName&quot;: &quot;element-ui&quot;,</span><br><span class="line">        &quot;styleLibraryName&quot;: &quot;theme-chalk&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意:</strong>这里我没有完全按照官网里面的改,区别可以看<a href="http://element-cn.eleme.io/#/zh-CN/component/quickstart" target="_blank" rel="noopener">Element官网</a>.</p>
+<p>接下来，如果你只希望引入部分组件，比如 Select，那么需要在 main.js 中写入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import &#123; Select,Option &#125; from &apos;element-ui&apos;;</span><br><span class="line">import App from &apos;./App.vue&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(Select)</span><br><span class="line">Vue.use(Option)</span><br><span class="line">  </span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意:</strong>当你引入Select组件的时候,一定要引入Option组件,否则Select的下拉框是不会显示的.</p>
+<p>到这里,你就可以在你的项目中使用Element组件了.如果有什么问题,可以一块交流下哦!</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/09/13/如何建立快速建立vue项目/" class="pre-post btn btn-default" title='如何快速创建vue项目'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">如何快速创建vue项目</span>
+        </a>
+    
+    
+        <a href="/2018/08/14/后台文件/" class="next-post btn btn-default" title='后台文件'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">后台文件</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: '9qi0cQkjgVDuBttUnYBUULiJ-gzGzoHsz',
+            appKey: 'ktd4f0Ws5cKTGXui3m63jXPt',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#通过npm安装element-ui模块"><span class="toc-text">通过npm安装element-ui模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在代码中引入"><span class="toc-text">在代码中引入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#完整引入"><span class="toc-text">完整引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按需引入"><span class="toc-text">按需引入</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

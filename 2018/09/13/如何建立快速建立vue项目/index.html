@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="JIABIN&#39;S BLOG">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://xiaojiabin.github.io">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>如何快速创建vue项目 | JIABIN&#39;S BLOG</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="JIABIN&#39;S BLOG" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.png">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Jiabin'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 阿斌的博客 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://xiaojiabin.github.io">JIABIN&#39;S BLOG</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/front/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/back/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tools/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="如何快速创建vue项目">
+            
+	            如何快速创建vue项目
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/前端">
+            前端
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Vue" title='Vue'>
+                        Vue
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/09/13</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><strong>摘要:</strong>本篇文章主要用于记录如何快速的生成vue项目</p>
+<h2 id="前提是先安装好node"><a href="#前提是先安装好node" class="headerlink" title="前提是先安装好node"></a>前提是先安装好node</h2><p>  在<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node官网</a>选择相对应的版本进行下载,按照提示进行每一步的操作即可.</p>
+<p>  <strong>如果网速过慢,可以考虑安装国内的淘宝镜像cnpm(可忽略)</strong></p>
+<h3 id="安装cnpm"><a href="#安装cnpm" class="headerlink" title="安装cnpm"></a>安装cnpm</h3><p>  <code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<h2 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h2><p>  <code>npm install webpack -g</code></p>
+<h2 id="全局安装Vue脚手架"><a href="#全局安装Vue脚手架" class="headerlink" title="全局安装Vue脚手架"></a>全局安装Vue脚手架</h2><p>  <code>npm install -g vue-cli</code><br> <strong>使用脚手架创建新项目;要先使用cd 命令打开将要放置项目的目录</strong></p>
+<h2 id="初始化项目-也就是创建项目"><a href="#初始化项目-也就是创建项目" class="headerlink" title="初始化项目,也就是创建项目"></a>初始化项目,也就是创建项目</h2><p>  <code>vue init webpack my-project</code><br>  <strong>my-project为项目的名称,可根据自己用不同的名字,接下来会有项目的配置,可根据自己的需求自行配置</strong></p>
+<h2 id="安装项目依赖"><a href="#安装项目依赖" class="headerlink" title="安装项目依赖"></a>安装项目依赖</h2><p>  在项目根目录下执行以下代码<br>  <code>npm install</code></p>
+<h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><p>  <code>npm run dev</code></p>
+<p>这时你就能看到一个vue的演示例子了,剩下的就剩下写代码了</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/09/14/通过for循环来取出两个数组不同的值/" class="pre-post btn btn-default" title='通过for循环来取出两个数组不同的值'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">通过for循环来取出两个数组不同的值</span>
+        </a>
+    
+    
+        <a href="/2018/09/10/vue项目如何引入ElementUI(全局引入和按需引入)/" class="next-post btn btn-default" title='vue项目如何引入ElementUI(全局引入和按需引入)'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">vue项目如何引入ElementUI(全局引入和按需引入)</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: '9qi0cQkjgVDuBttUnYBUULiJ-gzGzoHsz',
+            appKey: 'ktd4f0Ws5cKTGXui3m63jXPt',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前提是先安装好node"><span class="toc-text">前提是先安装好node</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装cnpm"><span class="toc-text">安装cnpm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装webpack"><span class="toc-text">安装webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全局安装Vue脚手架"><span class="toc-text">全局安装Vue脚手架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化项目-也就是创建项目"><span class="toc-text">初始化项目,也就是创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装项目依赖"><span class="toc-text">安装项目依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动项目"><span class="toc-text">启动项目</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
