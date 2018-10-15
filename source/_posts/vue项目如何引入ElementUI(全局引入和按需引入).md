@@ -1,11 +1,12 @@
 ---
 title: vue项目如何引入ElementUI(全局引入和按需引入)
-author: 闫先森 
-avatar: /images/favicon.png 
-authorDesc: 充满正能量的骚年 
-categories: 前端
-tags: 
-  - Vue
+categories:
+  - 前端
+tags:
+  - javascript
+comments: true
+date: 2018-09-10 19:01:42
+img:
 ---
 
 **摘要:**本篇文章主要是在官网上通过学习,参照官网写的一点小心得,仅供参考!

@@ -1,12 +1,12 @@
 ---
 title: 通过for循环来取出两个数组不同的值
-author: 闫先森
-avatar: /images/favicon.png
-authorDesc: 充满正能量的骚年
 date: 2018-09-14 10:31:31
-categories: 前端
+categories: 
+  - 前端
 tags: 
-  - javascript
+  - Vue
+comments: false
+img:
 ---
 
 **摘要:**本文记录于很久以前的学习笔记,仅限个人学习与记录

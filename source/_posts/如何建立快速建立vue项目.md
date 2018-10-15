@@ -1,12 +1,12 @@
 ---
 title: 如何快速创建vue项目
-author: 闫先森
-avatar: /images/favicon.png
-authorDesc: 充满正能量的骚年
-date: 2018-09-14 09:40:03
-categories: 前端
+date: 2018-09-13 09:40:03
+categories: 
+  - 前端
 tags: 
   - Vue
+comments: true
+img:
 ---
 
 **摘要:**本篇文章主要用于记录如何快速的生成vue项目
