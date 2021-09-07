@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>请求模块单元测试 | 成功源于每天的积累</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/bin/assets/css/0.styles.9cb74ece.css" as="style"><link rel="preload" href="/bin/assets/js/app.b47fad0f.js" as="script"><link rel="preload" href="/bin/assets/js/2.22993a7e.js" as="script"><link rel="preload" href="/bin/assets/js/166.5a3ee3d4.js" as="script"><link rel="prefetch" href="/bin/assets/js/10.12574e7b.js"><link rel="prefetch" href="/bin/assets/js/100.cfaa075d.js"><link rel="prefetch" href="/bin/assets/js/101.b90c64a8.js"><link rel="prefetch" href="/bin/assets/js/102.072791a9.js"><link rel="prefetch" href="/bin/assets/js/103.ff598b1e.js"><link rel="prefetch" href="/bin/assets/js/104.490e1293.js"><link rel="prefetch" href="/bin/assets/js/105.3e805b17.js"><link rel="prefetch" href="/bin/assets/js/106.03295f1f.js"><link rel="prefetch" href="/bin/assets/js/107.8027343c.js"><link rel="prefetch" href="/bin/assets/js/108.4e08bdd0.js"><link rel="prefetch" href="/bin/assets/js/109.2100f102.js"><link rel="prefetch" href="/bin/assets/js/11.7527fc87.js"><link rel="prefetch" href="/bin/assets/js/110.d6160034.js"><link rel="prefetch" href="/bin/assets/js/111.8a0df6f4.js"><link rel="prefetch" href="/bin/assets/js/112.4efba584.js"><link rel="prefetch" href="/bin/assets/js/113.12b95897.js"><link rel="prefetch" href="/bin/assets/js/114.769adc32.js"><link rel="prefetch" href="/bin/assets/js/115.81399fad.js"><link rel="prefetch" href="/bin/assets/js/116.e6582f94.js"><link rel="prefetch" href="/bin/assets/js/117.e874d073.js"><link rel="prefetch" href="/bin/assets/js/118.85b191f9.js"><link rel="prefetch" href="/bin/assets/js/119.752b4524.js"><link rel="prefetch" href="/bin/assets/js/12.7c376396.js"><link rel="prefetch" href="/bin/assets/js/120.3e83b745.js"><link rel="prefetch" href="/bin/assets/js/121.54a7e287.js"><link rel="prefetch" href="/bin/assets/js/122.f595ae5d.js"><link rel="prefetch" href="/bin/assets/js/123.3c9a85cc.js"><link rel="prefetch" href="/bin/assets/js/124.e1c05686.js"><link rel="prefetch" href="/bin/assets/js/125.f49a52e2.js"><link rel="prefetch" href="/bin/assets/js/126.5f189b4a.js"><link rel="prefetch" href="/bin/assets/js/127.9900c91b.js"><link rel="prefetch" href="/bin/assets/js/128.61e2ba80.js"><link rel="prefetch" href="/bin/assets/js/129.6b580a67.js"><link rel="prefetch" href="/bin/assets/js/13.365e0e40.js"><link rel="prefetch" href="/bin/assets/js/130.1b4c012d.js"><link rel="prefetch" href="/bin/assets/js/131.a90c4ff2.js"><link rel="prefetch" href="/bin/assets/js/132.1a46fb32.js"><link rel="prefetch" href="/bin/assets/js/133.0a034903.js"><link rel="prefetch" href="/bin/assets/js/134.12419c54.js"><link rel="prefetch" href="/bin/assets/js/135.1a9b92de.js"><link rel="prefetch" href="/bin/assets/js/136.8c286bd4.js"><link rel="prefetch" href="/bin/assets/js/137.a89a5de0.js"><link rel="prefetch" href="/bin/assets/js/138.3836d054.js"><link rel="prefetch" href="/bin/assets/js/139.8f211eb7.js"><link rel="prefetch" href="/bin/assets/js/14.60aef346.js"><link rel="prefetch" href="/bin/assets/js/140.885aa2b1.js"><link rel="prefetch" href="/bin/assets/js/141.ac3d232b.js"><link rel="prefetch" href="/bin/assets/js/142.ea153360.js"><link rel="prefetch" href="/bin/assets/js/143.02267bea.js"><link rel="prefetch" href="/bin/assets/js/144.0a514899.js"><link rel="prefetch" href="/bin/assets/js/145.23e9c48f.js"><link rel="prefetch" href="/bin/assets/js/146.fed0e99f.js"><link rel="prefetch" href="/bin/assets/js/147.e9c21956.js"><link rel="prefetch" href="/bin/assets/js/148.d04e6a80.js"><link rel="prefetch" href="/bin/assets/js/149.43acfeb4.js"><link rel="prefetch" href="/bin/assets/js/15.4f41dc04.js"><link rel="prefetch" href="/bin/assets/js/150.b887f5b3.js"><link rel="prefetch" href="/bin/assets/js/151.34475c9e.js"><link rel="prefetch" href="/bin/assets/js/152.922dd46a.js"><link rel="prefetch" href="/bin/assets/js/153.a31a5eb3.js"><link rel="prefetch" href="/bin/assets/js/154.8a38fa15.js"><link rel="prefetch" href="/bin/assets/js/155.cad47536.js"><link rel="prefetch" href="/bin/assets/js/156.13b949ee.js"><link rel="prefetch" href="/bin/assets/js/157.7bc1587c.js"><link rel="prefetch" href="/bin/assets/js/158.a8fee864.js"><link rel="prefetch" href="/bin/assets/js/159.3f963551.js"><link rel="prefetch" href="/bin/assets/js/16.22e76992.js"><link rel="prefetch" href="/bin/assets/js/160.02ac5129.js"><link rel="prefetch" href="/bin/assets/js/161.0be16f8e.js"><link rel="prefetch" href="/bin/assets/js/162.9f7e78d8.js"><link rel="prefetch" href="/bin/assets/js/163.95d431ca.js"><link rel="prefetch" href="/bin/assets/js/164.a72aafb8.js"><link rel="prefetch" href="/bin/assets/js/165.d87b141c.js"><link rel="prefetch" href="/bin/assets/js/167.0554e946.js"><link rel="prefetch" href="/bin/assets/js/168.8b7ee686.js"><link rel="prefetch" href="/bin/assets/js/169.d6789c1f.js"><link rel="prefetch" href="/bin/assets/js/17.dac1bf83.js"><link rel="prefetch" href="/bin/assets/js/170.ecc80072.js"><link rel="prefetch" href="/bin/assets/js/171.68583bc4.js"><link rel="prefetch" href="/bin/assets/js/172.51ebd3b5.js"><link rel="prefetch" href="/bin/assets/js/173.0b24dee9.js"><link rel="prefetch" href="/bin/assets/js/174.db62b063.js"><link rel="prefetch" href="/bin/assets/js/175.ca5444c6.js"><link rel="prefetch" href="/bin/assets/js/176.f117647e.js"><link rel="prefetch" href="/bin/assets/js/177.724081ca.js"><link rel="prefetch" href="/bin/assets/js/178.0d34302e.js"><link rel="prefetch" href="/bin/assets/js/179.b411845c.js"><link rel="prefetch" href="/bin/assets/js/18.20cf55d2.js"><link rel="prefetch" href="/bin/assets/js/180.8971a1b3.js"><link rel="prefetch" href="/bin/assets/js/181.3a9d6d9e.js"><link rel="prefetch" href="/bin/assets/js/182.bc8792d1.js"><link rel="prefetch" href="/bin/assets/js/183.b4305b21.js"><link rel="prefetch" href="/bin/assets/js/184.a61c6786.js"><link rel="prefetch" href="/bin/assets/js/185.73dda28a.js"><link rel="prefetch" href="/bin/assets/js/186.2434f01f.js"><link rel="prefetch" href="/bin/assets/js/187.520ca03d.js"><link rel="prefetch" href="/bin/assets/js/188.32f679d0.js"><link rel="prefetch" href="/bin/assets/js/189.df1634dd.js"><link rel="prefetch" href="/bin/assets/js/19.dc867a25.js"><link rel="prefetch" href="/bin/assets/js/190.a2f13c96.js"><link rel="prefetch" href="/bin/assets/js/191.4fbe66dd.js"><link rel="prefetch" href="/bin/assets/js/192.54426c9d.js"><link rel="prefetch" href="/bin/assets/js/193.8a9b89f1.js"><link rel="prefetch" href="/bin/assets/js/194.7b16b6a6.js"><link rel="prefetch" href="/bin/assets/js/195.24b59fee.js"><link rel="prefetch" href="/bin/assets/js/196.81070e1a.js"><link rel="prefetch" href="/bin/assets/js/197.8a347f54.js"><link rel="prefetch" href="/bin/assets/js/198.02cbba40.js"><link rel="prefetch" href="/bin/assets/js/199.b3982ebe.js"><link rel="prefetch" href="/bin/assets/js/20.3d17b188.js"><link rel="prefetch" href="/bin/assets/js/200.936a0538.js"><link rel="prefetch" href="/bin/assets/js/21.bf3dbd66.js"><link rel="prefetch" href="/bin/assets/js/22.4e5ad062.js"><link rel="prefetch" href="/bin/assets/js/23.44e43477.js"><link rel="prefetch" href="/bin/assets/js/24.c3bc4453.js"><link rel="prefetch" href="/bin/assets/js/25.7c691197.js"><link rel="prefetch" href="/bin/assets/js/26.453fec25.js"><link rel="prefetch" href="/bin/assets/js/27.cc2a3792.js"><link rel="prefetch" href="/bin/assets/js/28.80eb64d7.js"><link rel="prefetch" href="/bin/assets/js/29.7a7d0769.js"><link rel="prefetch" href="/bin/assets/js/3.1a052628.js"><link rel="prefetch" href="/bin/assets/js/30.47283eb4.js"><link rel="prefetch" href="/bin/assets/js/31.99f0a2bd.js"><link rel="prefetch" href="/bin/assets/js/32.bae926c5.js"><link rel="prefetch" href="/bin/assets/js/33.86fa460c.js"><link rel="prefetch" href="/bin/assets/js/34.d5db8edf.js"><link rel="prefetch" href="/bin/assets/js/35.8162cbbc.js"><link rel="prefetch" href="/bin/assets/js/36.563661f3.js"><link rel="prefetch" href="/bin/assets/js/37.8b63deef.js"><link rel="prefetch" href="/bin/assets/js/38.79470ce8.js"><link rel="prefetch" href="/bin/assets/js/39.b167ab07.js"><link rel="prefetch" href="/bin/assets/js/4.ee23dd2c.js"><link rel="prefetch" href="/bin/assets/js/40.94b54960.js"><link rel="prefetch" href="/bin/assets/js/41.647d1a23.js"><link rel="prefetch" href="/bin/assets/js/42.6048e9b3.js"><link rel="prefetch" href="/bin/assets/js/43.0f54e5ed.js"><link rel="prefetch" href="/bin/assets/js/44.fae412b5.js"><link rel="prefetch" href="/bin/assets/js/45.3efa351e.js"><link rel="prefetch" href="/bin/assets/js/46.8b8377c6.js"><link rel="prefetch" href="/bin/assets/js/47.24439c8d.js"><link rel="prefetch" href="/bin/assets/js/48.e2192574.js"><link rel="prefetch" href="/bin/assets/js/49.407af329.js"><link rel="prefetch" href="/bin/assets/js/5.476dcac2.js"><link rel="prefetch" href="/bin/assets/js/50.668533ea.js"><link rel="prefetch" href="/bin/assets/js/51.be01dce3.js"><link rel="prefetch" href="/bin/assets/js/52.346e869a.js"><link rel="prefetch" href="/bin/assets/js/53.9d6042d3.js"><link rel="prefetch" href="/bin/assets/js/54.98272551.js"><link rel="prefetch" href="/bin/assets/js/55.6c722699.js"><link rel="prefetch" href="/bin/assets/js/56.cf4ef7e0.js"><link rel="prefetch" href="/bin/assets/js/57.fe7638ea.js"><link rel="prefetch" href="/bin/assets/js/58.ac3fe883.js"><link rel="prefetch" href="/bin/assets/js/59.12448730.js"><link rel="prefetch" href="/bin/assets/js/6.55d50cdb.js"><link rel="prefetch" href="/bin/assets/js/60.5b4015e2.js"><link rel="prefetch" href="/bin/assets/js/61.813fb8f3.js"><link rel="prefetch" href="/bin/assets/js/62.e414e61a.js"><link rel="prefetch" href="/bin/assets/js/63.8c4af6bc.js"><link rel="prefetch" href="/bin/assets/js/64.a22ce66c.js"><link rel="prefetch" href="/bin/assets/js/65.de378ccc.js"><link rel="prefetch" href="/bin/assets/js/66.0c902148.js"><link rel="prefetch" href="/bin/assets/js/67.f76d8708.js"><link rel="prefetch" href="/bin/assets/js/68.30a31a71.js"><link rel="prefetch" href="/bin/assets/js/69.63086921.js"><link rel="prefetch" href="/bin/assets/js/7.d5f2b9d8.js"><link rel="prefetch" href="/bin/assets/js/70.db4b11a9.js"><link rel="prefetch" href="/bin/assets/js/71.6c0fc4ee.js"><link rel="prefetch" href="/bin/assets/js/72.18257ddb.js"><link rel="prefetch" href="/bin/assets/js/73.ead5b399.js"><link rel="prefetch" href="/bin/assets/js/74.835af730.js"><link rel="prefetch" href="/bin/assets/js/75.e2929063.js"><link rel="prefetch" href="/bin/assets/js/76.84591759.js"><link rel="prefetch" href="/bin/assets/js/77.adb85078.js"><link rel="prefetch" href="/bin/assets/js/78.033c67d1.js"><link rel="prefetch" href="/bin/assets/js/79.6b830cd6.js"><link rel="prefetch" href="/bin/assets/js/8.11b702fd.js"><link rel="prefetch" href="/bin/assets/js/80.100b010c.js"><link rel="prefetch" href="/bin/assets/js/81.b64d1418.js"><link rel="prefetch" href="/bin/assets/js/82.5142ca05.js"><link rel="prefetch" href="/bin/assets/js/83.00bb1269.js"><link rel="prefetch" href="/bin/assets/js/84.847c1e6e.js"><link rel="prefetch" href="/bin/assets/js/85.4e27ceb7.js"><link rel="prefetch" href="/bin/assets/js/86.68312164.js"><link rel="prefetch" href="/bin/assets/js/87.531e14de.js"><link rel="prefetch" href="/bin/assets/js/88.bc982616.js"><link rel="prefetch" href="/bin/assets/js/89.2b52b75b.js"><link rel="prefetch" href="/bin/assets/js/9.8036c1b5.js"><link rel="prefetch" href="/bin/assets/js/90.166e07d5.js"><link rel="prefetch" href="/bin/assets/js/91.f5685558.js"><link rel="prefetch" href="/bin/assets/js/92.6583a882.js"><link rel="prefetch" href="/bin/assets/js/93.5b1b2fa2.js"><link rel="prefetch" href="/bin/assets/js/94.aee56333.js"><link rel="prefetch" href="/bin/assets/js/95.4cad3b8d.js"><link rel="prefetch" href="/bin/assets/js/96.eb08c2fc.js"><link rel="prefetch" href="/bin/assets/js/97.25d00416.js"><link rel="prefetch" href="/bin/assets/js/98.b34434cd.js"><link rel="prefetch" href="/bin/assets/js/99.0e6b5f13.js">
+    <link rel="stylesheet" href="/bin/assets/css/0.styles.9cb74ece.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bin/" class="home-link router-link-active"><img src="/bin/img/EB-logo.png" alt="成功源于每天的积累" class="logo"> <span class="site-name can-hide">成功源于每天的积累</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bin/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端文章
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bin/pages/8143cc480faf9a11/" class="nav-link">
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4>
+          学习笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bin/note/javascript/" class="nav-link">
+  《JavaScript教程》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/js/" class="nav-link">
+  《JavaScript高级程序设计》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/es6/" class="nav-link">
+  《ES6 教程》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/vue/" class="nav-link">
+  《Vue》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/react/" class="nav-link">
+  《React》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/typescript-axios/" class="nav-link">
+  《TypeScript 从零实现 axios》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/git/" class="nav-link">
+  《Git》
+</a></li><li class="dropdown-subitem"><a href="/bin/pages/51afd6/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/bin/pages/4643cd/" class="nav-link">
+  JS设计模式总结
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bin/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端文章
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bin/pages/8143cc480faf9a11/" class="nav-link">
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4>
+          学习笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bin/note/javascript/" class="nav-link">
+  《JavaScript教程》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/js/" class="nav-link">
+  《JavaScript高级程序设计》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/es6/" class="nav-link">
+  《ES6 教程》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/vue/" class="nav-link">
+  《Vue》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/react/" class="nav-link">
+  《React》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/typescript-axios/" class="nav-link">
+  《TypeScript 从零实现 axios》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/git/" class="nav-link">
+  《Git》
+</a></li><li class="dropdown-subitem"><a href="/bin/pages/51afd6/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/bin/pages/4643cd/" class="nav-link">
+  JS设计模式总结
+</a></li></ul></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="请求模块单元测试"><a href="#请求模块单元测试" class="header-anchor">#</a> 请求模块单元测试</h1> <p>请求模块是 axios 最基础的模块，通过一个 axios 方法发送 Ajax 请求。</p> <h2 id="jasmine-ajax"><a href="#jasmine-ajax" class="header-anchor">#</a> jasmine-ajax</h2> <p><a href="https://jasmine.github.io/pages/getting_started.html" target="_blank" rel="noopener noreferrer">Jasmine<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 是一个 BDD(行为驱动开发)的测试框架，它有很多成熟的插件，比如我们要用到的 <a href="https://github.com/jasmine/jasmine-ajax" target="_blank" rel="noopener noreferrer"><code>jasmine-ajax</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，它会为我们发出的 Ajax 请求根据规范定义一组假的响应，并跟踪我们发出的Ajax请求，可以让我们方便的为结果做断言。</p> <p>其实 Jest 也可以去写插件，但并没有现成的 Ajax 相关的 Jest 插件，但是 Jest 测试中我们仍然可以使用 Jasmine 相关的插件，只需要做一些小小的配置即可。</p> <p>当然，未来我也会考虑去编写一个 Ajax 相关的 Jest 插件，目前我们仍然使用 <code>jasmine-ajax</code> 去配合我们编写测试。</p> <p><code>jasmine-ajax</code> 依赖 <code>jasmine-core</code>，因此首先我们要安装几个依赖包，<code>jasmine-ajax</code>、<code>jasmine-core</code> 和 <code>@types/jasmine-ajax</code>。</p> <p>这个时候我们需要去修改 <code>test/boot.ts</code> 文件，因为每次跑具体测试代码之前会先运行该文件，我们可以在这里去初始化 <code>jasmine-ajax</code>。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> JasmineCore <span class="token operator">=</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'jasmine-core'</span><span class="token punctuation">)</span>
+<span class="token comment">// @ts-ignore</span>
+global<span class="token punctuation">.</span><span class="token function-variable function">getJasmineRequireObj</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> JasmineCore
+<span class="token punctuation">}</span>
+<span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'jasmine-ajax'</span><span class="token punctuation">)</span>
+</code></pre></div><p>这里为了让 <code>jasmine-ajax</code> 插件运行成功，我们需要手动添加全局的 <code>getJasmineRequireObj</code> 方法，参考 <a href="https://github.com/jasmine/jasmine-ajax/issues/178" target="_blank" rel="noopener noreferrer">issue<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>接下来，我们就开始编写请求模块的单元测试。</p> <h2 id="测试代码编写"><a href="#测试代码编写" class="header-anchor">#</a> 测试代码编写</h2> <p><code>test/requests.spec.ts</code>：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> axios<span class="token punctuation">,</span> <span class="token punctuation">{</span> AxiosResponse<span class="token punctuation">,</span> AxiosError <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../src/index'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getAjaxRequest <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./helper'</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'requests'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should treat single string arg as url'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>method<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should treat method value as lowercase string'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      url<span class="token operator">:</span> <span class="token string">'/foo'</span><span class="token punctuation">,</span>
+      method<span class="token operator">:</span> <span class="token string">'POST'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>config<span class="token punctuation">.</span>method<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'post'</span><span class="token punctuation">)</span>
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">200</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should reject on network errors'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> resolveSpy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token operator">:</span> AxiosResponse<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> rejectSpy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token operator">:</span> AxiosError<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> e
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>resolveSpy<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>rejectSpy<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>next<span class="token punctuation">)</span>
+
+    <span class="token keyword">function</span> <span class="token function">next</span><span class="token punctuation">(</span>reason<span class="token operator">:</span> AxiosResponse <span class="token operator">|</span> AxiosError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>resolveSpy<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toHaveBeenCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>rejectSpy<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>reason <span class="token keyword">instanceof</span> <span class="token class-name">Error</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span><span class="token punctuation">(</span>reason <span class="token keyword">as</span> AxiosError<span class="token punctuation">)</span><span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'Network Error'</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>reason<span class="token punctuation">.</span>request<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span>expect<span class="token punctuation">.</span><span class="token function">any</span><span class="token punctuation">(</span>XMLHttpRequest<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+      jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should reject when request timeout'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> err<span class="token operator">:</span> AxiosError
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      timeout<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+      method<span class="token operator">:</span> <span class="token string">'post'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>error <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      err <span class="token operator">=</span> error
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// @ts-ignore</span>
+      request<span class="token punctuation">.</span>eventBus<span class="token punctuation">.</span><span class="token function">trigger</span><span class="token punctuation">(</span><span class="token string">'timeout'</span><span class="token punctuation">)</span>
+
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>err <span class="token keyword">instanceof</span> <span class="token class-name">Error</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'Timeout of 2000 ms exceeded'</span><span class="token punctuation">)</span>
+        <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should reject when validateStatus returns false'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> resolveSpy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token operator">:</span> AxiosResponse<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> rejectSpy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token operator">:</span> AxiosError<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> e
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token function">validateStatus</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> status <span class="token operator">!==</span> <span class="token number">500</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>resolveSpy<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>rejectSpy<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>next<span class="token punctuation">)</span>
+
+    <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">500</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">function</span> <span class="token function">next</span><span class="token punctuation">(</span>reason<span class="token operator">:</span> AxiosError <span class="token operator">|</span> AxiosResponse<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>resolveSpy<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toHaveBeenCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>rejectSpy<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>reason <span class="token keyword">instanceof</span> <span class="token class-name">Error</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span><span class="token punctuation">(</span>reason <span class="token keyword">as</span> AxiosError<span class="token punctuation">)</span><span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'Request failed with status code 500'</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span><span class="token punctuation">(</span>reason <span class="token keyword">as</span> AxiosError<span class="token punctuation">)</span><span class="token punctuation">.</span>response<span class="token operator">!</span><span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span>
+
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should resolve when validateStatus returns true'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> resolveSpy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token operator">:</span> AxiosResponse<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> rejectSpy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token operator">:</span> AxiosError<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> e
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token function">validateStatus</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> status <span class="token operator">===</span> <span class="token number">500</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>resolveSpy<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>rejectSpy<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>next<span class="token punctuation">)</span>
+
+    <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">500</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">function</span> <span class="token function">next</span><span class="token punctuation">(</span>res<span class="token operator">:</span> AxiosResponse <span class="token operator">|</span> AxiosError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>resolveSpy<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>rejectSpy<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toHaveBeenCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>config<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should return JSON when resolved'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> response<span class="token operator">:</span> AxiosResponse
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/api/account/signup'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      auth<span class="token operator">:</span> <span class="token punctuation">{</span>
+        username<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        password<span class="token operator">:</span> <span class="token string">''</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      method<span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+      headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+        Accept<span class="token operator">:</span> <span class="token string">'application/json'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      response <span class="token operator">=</span> res
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        statusText<span class="token operator">:</span> <span class="token string">'OK'</span><span class="token punctuation">,</span>
+        responseText<span class="token operator">:</span> <span class="token string">'{&quot;a&quot;: 1}'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should return JSON when rejecting'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> response<span class="token operator">:</span> AxiosResponse
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/api/account/signup'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      auth<span class="token operator">:</span> <span class="token punctuation">{</span>
+        username<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        password<span class="token operator">:</span> <span class="token string">''</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      method<span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
+      headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+        Accept<span class="token operator">:</span> <span class="token string">'application/json'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>error <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      response <span class="token operator">=</span> error<span class="token punctuation">.</span>response
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+        statusText<span class="token operator">:</span> <span class="token string">'Bad Request'</span><span class="token punctuation">,</span>
+        responseText<span class="token operator">:</span> <span class="token string">'{&quot;error&quot;: &quot;BAD USERNAME&quot;, &quot;code&quot;: 1}'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'object'</span><span class="token punctuation">)</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>error<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'BAD USERNAME'</span><span class="token punctuation">)</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>code<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should supply correct response'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> response<span class="token operator">:</span> AxiosResponse
+
+    axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      response <span class="token operator">=</span> res
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        statusText<span class="token operator">:</span> <span class="token string">'OK'</span><span class="token punctuation">,</span>
+        responseText<span class="token operator">:</span> <span class="token string">'{&quot;foo&quot;: &quot;bar&quot;}'</span><span class="token punctuation">,</span>
+        responseHeaders<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>foo<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>statusText<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'OK'</span><span class="token punctuation">)</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'content-type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'application/json'</span><span class="token punctuation">)</span>
+        <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should allow overriding Content-Type header case-insensitive'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> response<span class="token operator">:</span> AxiosResponse
+
+    axios
+      <span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>
+        <span class="token string">'/foo'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> prop<span class="token operator">:</span> <span class="token string">'value'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'content-type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        response <span class="token operator">=</span> res
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'application/json'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>我们要注意的一些点，在这里列出：</p> <ul><li>beforeEach &amp; afterEach</li></ul> <p><a href="https://jestjs.io/docs/en/api#beforeeachfn-timeout" target="_blank" rel="noopener noreferrer">beforeEach<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>表示每个测试用例运行前的钩子函数，在这里我们执行 <code>jasmine.Ajax.install()</code> 安装 <code>jasmine.Ajax</code>。</p> <p><a href="https://jestjs.io/docs/en/api#aftereachfn-timeout" target="_blank" rel="noopener noreferrer">afterEach<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>表示每个测试用例运行后的钩子函数，在这里我们执行 <code>jasmine.Ajax.uninstall()</code> 卸载 <code>jasmine.Ajax</code>。</p> <ul><li><code>getAjaxRequest</code></li></ul> <p><code>getAjaxRequest</code> 是我们在 <code>test/helper.ts</code> 定义的一个辅助方法，通过 <code>jasmine.Ajax.requests.mostRecent()</code> 拿到最近一次请求的 <code>request</code> 对象，这个 <code>request</code> 对象是 <code>jasmine-ajax</code> 库伪造的 <code>xhr</code> 对象，它模拟了 <code>xhr</code> 对象上的方法，并且提供一些 <code>api</code> 让我们使用，比如 <code>request.respondWith</code> 方法返回一个响应。</p> <ul><li>异步测试</li></ul> <p>注意到我们这里大部分的测试用例不再是同步的代码了，几乎都是一些异步逻辑，Jest 非常好地支持<a href="https://jestjs.io/docs/en/asynchronous" target="_blank" rel="noopener noreferrer">异步测试代码<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。通常有 2 种解决方案。</p> <p>第一种是利用 <code>done</code> 参数，每个测试用例函数有一个 <code>done</code> 参数，一旦我们使用了该参数，只有当 <code>done</code> 函数执行的时候表示这个测试用例结束。</p> <p>第二种是我们的测试函数返回一个 Promise 对象，一旦这个 Promise 对象 <code>resolve</code> 了，表示这个测试结束。</p> <ul><li>expect.any(constructor)</li></ul> <p>它表示匹配任意由 <code>constructor</code> 创建的对象实例。</p> <ul><li><code>request.eventBus.trigger</code></li></ul> <p>由于 <code>request.responseTimeout</code> 方法内部依赖了 <code>jasmine.clock</code> 方法会导致运行失败，这里我直接用了 <code>request.eventBus.trigger('timeout')</code> 方法触发了 <code>timeout</code> 事件。因为这个方法不在接口定义中，所以需要加 <code>// @ts-ignore</code>。</p> <p>另外，我们在测试中发现 2 个 case 没有通过。</p> <p>第一个是 <code>should treat method value as lowercase string</code>，这个测试用例是我们发送请求的 <code>method</code> 需要转换成小写字符串，这么做的目的也是为了之后 <code>flattenHeaders</code> 能正常处理这些 <code>method</code>，所以我们需要修改源码逻辑。</p> <p><code>core/Axios.ts</code>：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>  <span class="token function">request</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> config<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> AxiosPromise <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> url <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        config <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      config<span class="token punctuation">.</span>url <span class="token operator">=</span> url
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      config <span class="token operator">=</span> url
+    <span class="token punctuation">}</span>
+
+    config <span class="token operator">=</span> <span class="token function">mergeConfig</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>defaults<span class="token punctuation">,</span> config<span class="token punctuation">)</span>
+    config<span class="token punctuation">.</span>method <span class="token operator">=</span> config<span class="token punctuation">.</span>method<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>在合并配置后，我们需要把 <code>config.method</code> 转成小写字符串。</p> <p>另一个是 <code>should return JSON when rejecting</code>，这个测试用例是当我们发送请求失败后，也能把响应数据转换成 JSON 格式，所以也需要修改源码逻辑。</p> <p><code>core/dispatchRequest.ts</code>：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">dispatchRequest</span><span class="token punctuation">(</span>config<span class="token operator">:</span> AxiosRequestConfig<span class="token punctuation">)</span><span class="token operator">:</span> AxiosPromise <span class="token punctuation">{</span>
+  <span class="token function">throwIfCancellationRequested</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+  <span class="token function">processConfig</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token function">xhr</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
+    res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">transformResponseData</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    e <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token operator">&amp;&amp;</span> e<span class="token punctuation">.</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span>response <span class="token operator">=</span> <span class="token function">transformResponseData</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>response<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>除了对正常情况的响应数据做转换，我们也需要对异常情况的响应数据做转换。</p> <p>至此我们完成了 <code>ts-axios</code> 库对请求模块的测试，下一节课我们会从业务的角度来测试 <code>headers</code> 模块。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/bin/assets/js/app.b47fad0f.js" defer></script><script src="/bin/assets/js/2.22993a7e.js" defer></script><script src="/bin/assets/js/166.5a3ee3d4.js" defer></script>
+  </body>
+</html>

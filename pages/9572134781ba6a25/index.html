@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>剩余模块单元测试 | 成功源于每天的积累</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/bin/assets/css/0.styles.9cb74ece.css" as="style"><link rel="preload" href="/bin/assets/js/app.b47fad0f.js" as="script"><link rel="preload" href="/bin/assets/js/2.22993a7e.js" as="script"><link rel="preload" href="/bin/assets/js/172.51ebd3b5.js" as="script"><link rel="prefetch" href="/bin/assets/js/10.12574e7b.js"><link rel="prefetch" href="/bin/assets/js/100.cfaa075d.js"><link rel="prefetch" href="/bin/assets/js/101.b90c64a8.js"><link rel="prefetch" href="/bin/assets/js/102.072791a9.js"><link rel="prefetch" href="/bin/assets/js/103.ff598b1e.js"><link rel="prefetch" href="/bin/assets/js/104.490e1293.js"><link rel="prefetch" href="/bin/assets/js/105.3e805b17.js"><link rel="prefetch" href="/bin/assets/js/106.03295f1f.js"><link rel="prefetch" href="/bin/assets/js/107.8027343c.js"><link rel="prefetch" href="/bin/assets/js/108.4e08bdd0.js"><link rel="prefetch" href="/bin/assets/js/109.2100f102.js"><link rel="prefetch" href="/bin/assets/js/11.7527fc87.js"><link rel="prefetch" href="/bin/assets/js/110.d6160034.js"><link rel="prefetch" href="/bin/assets/js/111.8a0df6f4.js"><link rel="prefetch" href="/bin/assets/js/112.4efba584.js"><link rel="prefetch" href="/bin/assets/js/113.12b95897.js"><link rel="prefetch" href="/bin/assets/js/114.769adc32.js"><link rel="prefetch" href="/bin/assets/js/115.81399fad.js"><link rel="prefetch" href="/bin/assets/js/116.e6582f94.js"><link rel="prefetch" href="/bin/assets/js/117.e874d073.js"><link rel="prefetch" href="/bin/assets/js/118.85b191f9.js"><link rel="prefetch" href="/bin/assets/js/119.752b4524.js"><link rel="prefetch" href="/bin/assets/js/12.7c376396.js"><link rel="prefetch" href="/bin/assets/js/120.3e83b745.js"><link rel="prefetch" href="/bin/assets/js/121.54a7e287.js"><link rel="prefetch" href="/bin/assets/js/122.f595ae5d.js"><link rel="prefetch" href="/bin/assets/js/123.3c9a85cc.js"><link rel="prefetch" href="/bin/assets/js/124.e1c05686.js"><link rel="prefetch" href="/bin/assets/js/125.f49a52e2.js"><link rel="prefetch" href="/bin/assets/js/126.5f189b4a.js"><link rel="prefetch" href="/bin/assets/js/127.9900c91b.js"><link rel="prefetch" href="/bin/assets/js/128.61e2ba80.js"><link rel="prefetch" href="/bin/assets/js/129.6b580a67.js"><link rel="prefetch" href="/bin/assets/js/13.365e0e40.js"><link rel="prefetch" href="/bin/assets/js/130.1b4c012d.js"><link rel="prefetch" href="/bin/assets/js/131.a90c4ff2.js"><link rel="prefetch" href="/bin/assets/js/132.1a46fb32.js"><link rel="prefetch" href="/bin/assets/js/133.0a034903.js"><link rel="prefetch" href="/bin/assets/js/134.12419c54.js"><link rel="prefetch" href="/bin/assets/js/135.1a9b92de.js"><link rel="prefetch" href="/bin/assets/js/136.8c286bd4.js"><link rel="prefetch" href="/bin/assets/js/137.a89a5de0.js"><link rel="prefetch" href="/bin/assets/js/138.3836d054.js"><link rel="prefetch" href="/bin/assets/js/139.8f211eb7.js"><link rel="prefetch" href="/bin/assets/js/14.60aef346.js"><link rel="prefetch" href="/bin/assets/js/140.885aa2b1.js"><link rel="prefetch" href="/bin/assets/js/141.ac3d232b.js"><link rel="prefetch" href="/bin/assets/js/142.ea153360.js"><link rel="prefetch" href="/bin/assets/js/143.02267bea.js"><link rel="prefetch" href="/bin/assets/js/144.0a514899.js"><link rel="prefetch" href="/bin/assets/js/145.23e9c48f.js"><link rel="prefetch" href="/bin/assets/js/146.fed0e99f.js"><link rel="prefetch" href="/bin/assets/js/147.e9c21956.js"><link rel="prefetch" href="/bin/assets/js/148.d04e6a80.js"><link rel="prefetch" href="/bin/assets/js/149.43acfeb4.js"><link rel="prefetch" href="/bin/assets/js/15.4f41dc04.js"><link rel="prefetch" href="/bin/assets/js/150.b887f5b3.js"><link rel="prefetch" href="/bin/assets/js/151.34475c9e.js"><link rel="prefetch" href="/bin/assets/js/152.922dd46a.js"><link rel="prefetch" href="/bin/assets/js/153.a31a5eb3.js"><link rel="prefetch" href="/bin/assets/js/154.8a38fa15.js"><link rel="prefetch" href="/bin/assets/js/155.cad47536.js"><link rel="prefetch" href="/bin/assets/js/156.13b949ee.js"><link rel="prefetch" href="/bin/assets/js/157.7bc1587c.js"><link rel="prefetch" href="/bin/assets/js/158.a8fee864.js"><link rel="prefetch" href="/bin/assets/js/159.3f963551.js"><link rel="prefetch" href="/bin/assets/js/16.22e76992.js"><link rel="prefetch" href="/bin/assets/js/160.02ac5129.js"><link rel="prefetch" href="/bin/assets/js/161.0be16f8e.js"><link rel="prefetch" href="/bin/assets/js/162.9f7e78d8.js"><link rel="prefetch" href="/bin/assets/js/163.95d431ca.js"><link rel="prefetch" href="/bin/assets/js/164.a72aafb8.js"><link rel="prefetch" href="/bin/assets/js/165.d87b141c.js"><link rel="prefetch" href="/bin/assets/js/166.5a3ee3d4.js"><link rel="prefetch" href="/bin/assets/js/167.0554e946.js"><link rel="prefetch" href="/bin/assets/js/168.8b7ee686.js"><link rel="prefetch" href="/bin/assets/js/169.d6789c1f.js"><link rel="prefetch" href="/bin/assets/js/17.dac1bf83.js"><link rel="prefetch" href="/bin/assets/js/170.ecc80072.js"><link rel="prefetch" href="/bin/assets/js/171.68583bc4.js"><link rel="prefetch" href="/bin/assets/js/173.0b24dee9.js"><link rel="prefetch" href="/bin/assets/js/174.db62b063.js"><link rel="prefetch" href="/bin/assets/js/175.ca5444c6.js"><link rel="prefetch" href="/bin/assets/js/176.f117647e.js"><link rel="prefetch" href="/bin/assets/js/177.724081ca.js"><link rel="prefetch" href="/bin/assets/js/178.0d34302e.js"><link rel="prefetch" href="/bin/assets/js/179.b411845c.js"><link rel="prefetch" href="/bin/assets/js/18.20cf55d2.js"><link rel="prefetch" href="/bin/assets/js/180.8971a1b3.js"><link rel="prefetch" href="/bin/assets/js/181.3a9d6d9e.js"><link rel="prefetch" href="/bin/assets/js/182.bc8792d1.js"><link rel="prefetch" href="/bin/assets/js/183.b4305b21.js"><link rel="prefetch" href="/bin/assets/js/184.a61c6786.js"><link rel="prefetch" href="/bin/assets/js/185.73dda28a.js"><link rel="prefetch" href="/bin/assets/js/186.2434f01f.js"><link rel="prefetch" href="/bin/assets/js/187.520ca03d.js"><link rel="prefetch" href="/bin/assets/js/188.32f679d0.js"><link rel="prefetch" href="/bin/assets/js/189.df1634dd.js"><link rel="prefetch" href="/bin/assets/js/19.dc867a25.js"><link rel="prefetch" href="/bin/assets/js/190.a2f13c96.js"><link rel="prefetch" href="/bin/assets/js/191.4fbe66dd.js"><link rel="prefetch" href="/bin/assets/js/192.54426c9d.js"><link rel="prefetch" href="/bin/assets/js/193.8a9b89f1.js"><link rel="prefetch" href="/bin/assets/js/194.7b16b6a6.js"><link rel="prefetch" href="/bin/assets/js/195.24b59fee.js"><link rel="prefetch" href="/bin/assets/js/196.81070e1a.js"><link rel="prefetch" href="/bin/assets/js/197.8a347f54.js"><link rel="prefetch" href="/bin/assets/js/198.02cbba40.js"><link rel="prefetch" href="/bin/assets/js/199.b3982ebe.js"><link rel="prefetch" href="/bin/assets/js/20.3d17b188.js"><link rel="prefetch" href="/bin/assets/js/200.936a0538.js"><link rel="prefetch" href="/bin/assets/js/21.bf3dbd66.js"><link rel="prefetch" href="/bin/assets/js/22.4e5ad062.js"><link rel="prefetch" href="/bin/assets/js/23.44e43477.js"><link rel="prefetch" href="/bin/assets/js/24.c3bc4453.js"><link rel="prefetch" href="/bin/assets/js/25.7c691197.js"><link rel="prefetch" href="/bin/assets/js/26.453fec25.js"><link rel="prefetch" href="/bin/assets/js/27.cc2a3792.js"><link rel="prefetch" href="/bin/assets/js/28.80eb64d7.js"><link rel="prefetch" href="/bin/assets/js/29.7a7d0769.js"><link rel="prefetch" href="/bin/assets/js/3.1a052628.js"><link rel="prefetch" href="/bin/assets/js/30.47283eb4.js"><link rel="prefetch" href="/bin/assets/js/31.99f0a2bd.js"><link rel="prefetch" href="/bin/assets/js/32.bae926c5.js"><link rel="prefetch" href="/bin/assets/js/33.86fa460c.js"><link rel="prefetch" href="/bin/assets/js/34.d5db8edf.js"><link rel="prefetch" href="/bin/assets/js/35.8162cbbc.js"><link rel="prefetch" href="/bin/assets/js/36.563661f3.js"><link rel="prefetch" href="/bin/assets/js/37.8b63deef.js"><link rel="prefetch" href="/bin/assets/js/38.79470ce8.js"><link rel="prefetch" href="/bin/assets/js/39.b167ab07.js"><link rel="prefetch" href="/bin/assets/js/4.ee23dd2c.js"><link rel="prefetch" href="/bin/assets/js/40.94b54960.js"><link rel="prefetch" href="/bin/assets/js/41.647d1a23.js"><link rel="prefetch" href="/bin/assets/js/42.6048e9b3.js"><link rel="prefetch" href="/bin/assets/js/43.0f54e5ed.js"><link rel="prefetch" href="/bin/assets/js/44.fae412b5.js"><link rel="prefetch" href="/bin/assets/js/45.3efa351e.js"><link rel="prefetch" href="/bin/assets/js/46.8b8377c6.js"><link rel="prefetch" href="/bin/assets/js/47.24439c8d.js"><link rel="prefetch" href="/bin/assets/js/48.e2192574.js"><link rel="prefetch" href="/bin/assets/js/49.407af329.js"><link rel="prefetch" href="/bin/assets/js/5.476dcac2.js"><link rel="prefetch" href="/bin/assets/js/50.668533ea.js"><link rel="prefetch" href="/bin/assets/js/51.be01dce3.js"><link rel="prefetch" href="/bin/assets/js/52.346e869a.js"><link rel="prefetch" href="/bin/assets/js/53.9d6042d3.js"><link rel="prefetch" href="/bin/assets/js/54.98272551.js"><link rel="prefetch" href="/bin/assets/js/55.6c722699.js"><link rel="prefetch" href="/bin/assets/js/56.cf4ef7e0.js"><link rel="prefetch" href="/bin/assets/js/57.fe7638ea.js"><link rel="prefetch" href="/bin/assets/js/58.ac3fe883.js"><link rel="prefetch" href="/bin/assets/js/59.12448730.js"><link rel="prefetch" href="/bin/assets/js/6.55d50cdb.js"><link rel="prefetch" href="/bin/assets/js/60.5b4015e2.js"><link rel="prefetch" href="/bin/assets/js/61.813fb8f3.js"><link rel="prefetch" href="/bin/assets/js/62.e414e61a.js"><link rel="prefetch" href="/bin/assets/js/63.8c4af6bc.js"><link rel="prefetch" href="/bin/assets/js/64.a22ce66c.js"><link rel="prefetch" href="/bin/assets/js/65.de378ccc.js"><link rel="prefetch" href="/bin/assets/js/66.0c902148.js"><link rel="prefetch" href="/bin/assets/js/67.f76d8708.js"><link rel="prefetch" href="/bin/assets/js/68.30a31a71.js"><link rel="prefetch" href="/bin/assets/js/69.63086921.js"><link rel="prefetch" href="/bin/assets/js/7.d5f2b9d8.js"><link rel="prefetch" href="/bin/assets/js/70.db4b11a9.js"><link rel="prefetch" href="/bin/assets/js/71.6c0fc4ee.js"><link rel="prefetch" href="/bin/assets/js/72.18257ddb.js"><link rel="prefetch" href="/bin/assets/js/73.ead5b399.js"><link rel="prefetch" href="/bin/assets/js/74.835af730.js"><link rel="prefetch" href="/bin/assets/js/75.e2929063.js"><link rel="prefetch" href="/bin/assets/js/76.84591759.js"><link rel="prefetch" href="/bin/assets/js/77.adb85078.js"><link rel="prefetch" href="/bin/assets/js/78.033c67d1.js"><link rel="prefetch" href="/bin/assets/js/79.6b830cd6.js"><link rel="prefetch" href="/bin/assets/js/8.11b702fd.js"><link rel="prefetch" href="/bin/assets/js/80.100b010c.js"><link rel="prefetch" href="/bin/assets/js/81.b64d1418.js"><link rel="prefetch" href="/bin/assets/js/82.5142ca05.js"><link rel="prefetch" href="/bin/assets/js/83.00bb1269.js"><link rel="prefetch" href="/bin/assets/js/84.847c1e6e.js"><link rel="prefetch" href="/bin/assets/js/85.4e27ceb7.js"><link rel="prefetch" href="/bin/assets/js/86.68312164.js"><link rel="prefetch" href="/bin/assets/js/87.531e14de.js"><link rel="prefetch" href="/bin/assets/js/88.bc982616.js"><link rel="prefetch" href="/bin/assets/js/89.2b52b75b.js"><link rel="prefetch" href="/bin/assets/js/9.8036c1b5.js"><link rel="prefetch" href="/bin/assets/js/90.166e07d5.js"><link rel="prefetch" href="/bin/assets/js/91.f5685558.js"><link rel="prefetch" href="/bin/assets/js/92.6583a882.js"><link rel="prefetch" href="/bin/assets/js/93.5b1b2fa2.js"><link rel="prefetch" href="/bin/assets/js/94.aee56333.js"><link rel="prefetch" href="/bin/assets/js/95.4cad3b8d.js"><link rel="prefetch" href="/bin/assets/js/96.eb08c2fc.js"><link rel="prefetch" href="/bin/assets/js/97.25d00416.js"><link rel="prefetch" href="/bin/assets/js/98.b34434cd.js"><link rel="prefetch" href="/bin/assets/js/99.0e6b5f13.js">
+    <link rel="stylesheet" href="/bin/assets/css/0.styles.9cb74ece.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bin/" class="home-link router-link-active"><img src="/bin/img/EB-logo.png" alt="成功源于每天的积累" class="logo"> <span class="site-name can-hide">成功源于每天的积累</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/bin/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端文章
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bin/pages/8143cc480faf9a11/" class="nav-link">
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4>
+          学习笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bin/note/javascript/" class="nav-link">
+  《JavaScript教程》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/js/" class="nav-link">
+  《JavaScript高级程序设计》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/es6/" class="nav-link">
+  《ES6 教程》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/vue/" class="nav-link">
+  《Vue》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/react/" class="nav-link">
+  《React》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/typescript-axios/" class="nav-link">
+  《TypeScript 从零实现 axios》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/git/" class="nav-link">
+  《Git》
+</a></li><li class="dropdown-subitem"><a href="/bin/pages/51afd6/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/bin/pages/4643cd/" class="nav-link">
+  JS设计模式总结
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/bin/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端文章
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bin/pages/8143cc480faf9a11/" class="nav-link">
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4>
+          学习笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bin/note/javascript/" class="nav-link">
+  《JavaScript教程》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/js/" class="nav-link">
+  《JavaScript高级程序设计》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/es6/" class="nav-link">
+  《ES6 教程》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/vue/" class="nav-link">
+  《Vue》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/react/" class="nav-link">
+  《React》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/typescript-axios/" class="nav-link">
+  《TypeScript 从零实现 axios》
+</a></li><li class="dropdown-subitem"><a href="/bin/note/git/" class="nav-link">
+  《Git》
+</a></li><li class="dropdown-subitem"><a href="/bin/pages/51afd6/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/bin/pages/4643cd/" class="nav-link">
+  JS设计模式总结
+</a></li></ul></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="剩余模块单元测试"><a href="#剩余模块单元测试" class="header-anchor">#</a> 剩余模块单元测试</h1> <h2 id="defaults-模块单元测试"><a href="#defaults-模块单元测试" class="header-anchor">#</a> defaults 模块单元测试</h2> <p><code>defaults</code> 模块为请求配置提供了一些默认的属性和方法，我们需要为其编写单元测试。</p> <p><code>test/defaults.spec.ts</code>：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> axios<span class="token punctuation">,</span> <span class="token punctuation">{</span> AxiosTransformer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../src/index'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getAjaxRequest <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./helper'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> deepMerge <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../src/helpers/util'</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'defaults'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should transform request json'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token punctuation">(</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>transformRequest <span class="token keyword">as</span> AxiosTransformer<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">'bar'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'{&quot;foo&quot;:&quot;bar&quot;}'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should do nothing to request string'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token punctuation">(</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>transformRequest <span class="token keyword">as</span> AxiosTransformer<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'foo=bar'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'foo=bar'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should transform response json'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">(</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>transformResponse <span class="token keyword">as</span> AxiosTransformer<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'{&quot;foo&quot;:&quot;bar&quot;}'</span><span class="token punctuation">)</span>
+
+    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'object'</span><span class="token punctuation">)</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>foo<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should do nothing to response string'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token punctuation">(</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>transformResponse <span class="token keyword">as</span> AxiosTransformer<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'foo=bar'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'foo=bar'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should use global defaults config'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should use modified defaults config'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">'http://example.com/'</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'http://example.com/foo'</span><span class="token punctuation">)</span>
+      <span class="token keyword">delete</span> axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should use request config'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      baseURL<span class="token operator">:</span> <span class="token string">'http://www.example.com'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'http://www.example.com/foo'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should use default config for custom instance'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      xsrfCookieName<span class="token operator">:</span> <span class="token string">'CUSTOM-XSRF-TOKEN'</span><span class="token punctuation">,</span>
+      xsrfHeaderName<span class="token operator">:</span> <span class="token string">'X-CUSTOM-XSRF-TOKEN'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfCookieName <span class="token operator">+</span> <span class="token string">'=foobarbaz'</span>
+
+    instance<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span>instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfHeaderName<span class="token operator">!</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'foobarbaz'</span><span class="token punctuation">)</span>
+      document<span class="token punctuation">.</span>cookie <span class="token operator">=</span>
+        instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfCookieName <span class="token operator">+</span>
+        <span class="token string">'=;expires='</span> <span class="token operator">+</span>
+        <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">86400000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUTCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should use GET headers'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>get<span class="token punctuation">[</span><span class="token string">'X-CUSTOM-HEADER'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'foo'</span>
+    axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span><span class="token string">'X-CUSTOM-HEADER'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+      <span class="token keyword">delete</span> axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>get<span class="token punctuation">[</span><span class="token string">'X-CUSTOM-HEADER'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should use POST headers'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">'X-CUSTOM-HEADER'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'foo'</span>
+    axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span><span class="token string">'X-CUSTOM-HEADER'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+      <span class="token keyword">delete</span> axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">'X-CUSTOM-HEADER'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should use header config'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+        common<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">'X-COMMON-HEADER'</span><span class="token operator">:</span> <span class="token string">'commonHeaderValue'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        get<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">'X-GET-HEADER'</span><span class="token operator">:</span> <span class="token string">'getHeaderValue'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        post<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">'X-POST-HEADER'</span><span class="token operator">:</span> <span class="token string">'postHeaderValue'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    instance<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'X-FOO-HEADER'</span><span class="token operator">:</span> <span class="token string">'fooHeaderValue'</span><span class="token punctuation">,</span>
+        <span class="token string">'X-BAR-HEADER'</span><span class="token operator">:</span> <span class="token string">'barHeaderValue'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span>
+        <span class="token function">deepMerge</span><span class="token punctuation">(</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>common<span class="token punctuation">,</span> axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>get<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token string">'X-COMMON-HEADER'</span><span class="token operator">:</span> <span class="token string">'commonHeaderValue'</span><span class="token punctuation">,</span>
+          <span class="token string">'X-GET-HEADER'</span><span class="token operator">:</span> <span class="token string">'getHeaderValue'</span><span class="token punctuation">,</span>
+          <span class="token string">'X-FOO-HEADER'</span><span class="token operator">:</span> <span class="token string">'fooHeaderValue'</span><span class="token punctuation">,</span>
+          <span class="token string">'X-BAR-HEADER'</span><span class="token operator">:</span> <span class="token string">'barHeaderValue'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should be used by custom instance if set before instance created'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">'http://example.org/'</span>
+    <span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    instance<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'http://example.org/foo'</span><span class="token punctuation">)</span>
+      <span class="token keyword">delete</span> axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should not be used by custom instance if set after instance created'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">'http://example.org/'</span>
+
+    instance<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="transform-模块单元测试"><a href="#transform-模块单元测试" class="header-anchor">#</a> transform 模块单元测试</h2> <p><code>transform</code> 模块用来定义请求和响应的转换方法，我们需要为其编写单元测试。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> axios<span class="token punctuation">,</span> <span class="token punctuation">{</span> AxiosResponse<span class="token punctuation">,</span> AxiosTransformer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../src/index'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getAjaxRequest <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./helper'</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'transform'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should transform JSON to string'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+      foo<span class="token operator">:</span> <span class="token string">'bar'</span>
+    <span class="token punctuation">}</span>
+
+    axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'{&quot;foo&quot;:&quot;bar&quot;}'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should transform string to JSON'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> response<span class="token operator">:</span> AxiosResponse
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      response <span class="token operator">=</span> res
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        responseText<span class="token operator">:</span> <span class="token string">'{&quot;foo&quot;: &quot;bar&quot;}'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> response<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'object'</span><span class="token punctuation">)</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>foo<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span>
+        <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should override default transform'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+      foo<span class="token operator">:</span> <span class="token string">'bar'</span>
+    <span class="token punctuation">}</span>
+
+    axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token function">transformRequest</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> data
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">'bar'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should allow an Array of transformers'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+      foo<span class="token operator">:</span> <span class="token string">'bar'</span>
+    <span class="token punctuation">}</span>
+
+    axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      transformRequest<span class="token operator">:</span> <span class="token punctuation">(</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>transformRequest <span class="token keyword">as</span> AxiosTransformer<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>
+        data
+      <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> data<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">,</span> <span class="token string">'baz'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'{&quot;foo&quot;:&quot;baz&quot;}'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should allowing mutating headers'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> token <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">)</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">transformRequest</span><span class="token operator">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">,</span> headers<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        headers<span class="token punctuation">[</span><span class="token string">'X-Authorization'</span><span class="token punctuation">]</span> <span class="token operator">=</span> token
+        <span class="token keyword">return</span> data
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span><span class="token string">'X-Authorization'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="xsrf-模块单元测试"><a href="#xsrf-模块单元测试" class="header-anchor">#</a> xsrf 模块单元测试</h2> <p><code>xsrf</code> 模块提供了一套防御 <code>xsrf</code> 攻击的解决方案，我们需要为其编写单元测试。</p> <p><code>test/xsrf.spec.ts</code>：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'../src/index'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getAjaxRequest <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./helper'</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'xsrf'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    document<span class="token punctuation">.</span>cookie <span class="token operator">=</span>
+      axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfCookieName <span class="token operator">+</span> <span class="token string">'=;expires='</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">86400000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUTCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should not set xsrf header if cookie is null'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfHeaderName<span class="token operator">!</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeUndefined</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should set xsrf header if cookie is set'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfCookieName <span class="token operator">+</span> <span class="token string">'=12345'</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfHeaderName<span class="token operator">!</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'12345'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should not set xsrf header for cross origin'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfCookieName <span class="token operator">+</span> <span class="token string">'=12345'</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'http://example.com/'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfHeaderName<span class="token operator">!</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeUndefined</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should set xsrf header for cross origin when using withCredentials'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfCookieName <span class="token operator">+</span> <span class="token string">'=12345'</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'http://example.com/'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      withCredentials<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>xsrfHeaderName<span class="token operator">!</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'12345'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>注意在 <code>afterEach</code> 函数中我们清空了 <code>xsrf</code> 相关的 cookie。</p> <h2 id="上传下载模块单元测试"><a href="#上传下载模块单元测试" class="header-anchor">#</a> 上传下载模块单元测试</h2> <p>上传下载模块允许我们监听上传和下载的进度，我们需要为其编写单元测试。</p> <p><code>test/progress.spec.ts</code>：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'../src/index'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getAjaxRequest <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./helper'</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'progress'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should add a download progress handler'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> progressSpy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> onDownloadProgress<span class="token operator">:</span> progressSpy <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        responseText<span class="token operator">:</span> <span class="token string">'{&quot;foo&quot;: &quot;bar&quot;}'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>progressSpy<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should add a upload progress handler'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> progressSpy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> onUploadProgress<span class="token operator">:</span> progressSpy <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Jasmine AJAX doesn't trigger upload events.Waiting for jest-ajax fix</span>
+      <span class="token comment">// expect(progressSpy).toHaveBeenCalled()</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>注意，由于 <code>jasmine-ajax</code> 插件不会派发 <code>upload</code> 事件，这个未来可以通过我们自己编写的 <code>jest-ajax</code> 插件来解决，目前不写断言的情况它会直接通过。</p> <h2 id="http-授权模块单元测试"><a href="#http-授权模块单元测试" class="header-anchor">#</a> HTTP 授权模块单元测试</h2> <p>HTTP 授权模块为我们在请求头中添加 <code>Authorization</code> 字段，我们需要为其编写单元测试。</p> <p><code>test/auth.spec.ts</code>：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'../src/index'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getAjaxRequest <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./helper'</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'auth'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jasmine<span class="token punctuation">.</span>Ajax<span class="token punctuation">.</span><span class="token function">uninstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should accept HTTP Basic auth with username/password'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      auth<span class="token operator">:</span> <span class="token punctuation">{</span>
+        username<span class="token operator">:</span> <span class="token string">'Aladdin'</span><span class="token punctuation">,</span>
+        password<span class="token operator">:</span> <span class="token string">'open sesame'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>requestHeaders<span class="token punctuation">[</span><span class="token string">'Authorization'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should fail to encode HTTP Basic auth credentials with non-Latin1 characters'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      auth<span class="token operator">:</span> <span class="token punctuation">{</span>
+        username<span class="token operator">:</span> <span class="token string">'Aladßç£☃din'</span><span class="token punctuation">,</span>
+        password<span class="token operator">:</span> <span class="token string">'open sesame'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>
+          <span class="token string">'Should not succeed to make a HTTP Basic auth request with non-latin1 chars in credentials.'</span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>error <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">character</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="静态方法模块单元测试"><a href="#静态方法模块单元测试" class="header-anchor">#</a> 静态方法模块单元测试</h2> <p>静态方法模块为 <code>axios</code> 对象添加了 2 个静态方法，我们需要为其编写单元测试。</p> <p><code>test/static.spec.ts</code>：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'../src/index'</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'promise'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should support all'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> fulfilled <span class="token operator">=</span> <span class="token boolean">false</span>
+
+    axios<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>arg <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      fulfilled <span class="token operator">=</span> arg<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>fulfilled<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should support spread'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">let</span> fulfilled <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token keyword">let</span> result<span class="token operator">:</span> <span class="token builtin">any</span>
+
+    axios
+      <span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">123</span><span class="token punctuation">,</span> <span class="token number">456</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
+        axios<span class="token punctuation">.</span><span class="token function">spread</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          sum <span class="token operator">=</span> a <span class="token operator">+</span> b
+          fulfilled <span class="token operator">=</span> <span class="token boolean">true</span>
+          <span class="token keyword">return</span> <span class="token string">'hello world'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        result <span class="token operator">=</span> res
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>fulfilled<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">123</span> <span class="token operator">+</span> <span class="token number">456</span><span class="token punctuation">)</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span>
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="补充未覆盖的代码测试"><a href="#补充未覆盖的代码测试" class="header-anchor">#</a> 补充未覆盖的代码测试</h2> <p>我们发现，跑完测试后，仍有一些代码没有覆盖到测试，其中 <code>core/xhr.ts</code> 文件的第 43 行：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>responseType<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  request<span class="token punctuation">.</span>responseType <span class="token operator">=</span> responseType
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们并未在测试中设置过 <code>responseType</code>，因此我们在 <code>test/requests.spect.ts</code> 文件中补充相关测试：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should support array buffer response'</span><span class="token punctuation">,</span> done <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> response<span class="token operator">:</span> AxiosResponse
+
+  <span class="token keyword">function</span> <span class="token function">str2ab</span><span class="token punctuation">(</span>str<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> buff <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>length <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint16Array</span><span class="token punctuation">(</span>buff<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      view<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> buff
+  <span class="token punctuation">}</span>
+
+  <span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">'/foo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    responseType<span class="token operator">:</span> <span class="token string">'arraybuffer'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    response <span class="token operator">=</span> data
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token function">getAjaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>request <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    request<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token comment">// @ts-ignore</span>
+      response<span class="token operator">:</span> <span class="token function">str2ab</span><span class="token punctuation">(</span><span class="token string">'Hello world'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">expect</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>byteLength<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span>
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>另外我们发现 <code>core/xhr.ts</code> 文件的第 13 行：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>method <span class="token operator">=</span> <span class="token string">'get'</span>
+</code></pre></div><p>分支没有测试完全。因为实际上代码执行到这的时候 <code>method</code> 是一定会有的，所以我们不必为其指定默认值，另外还需要在 <code>method!.toUpperCase()</code> 的时候使用非空断言。</p> <p>同时<code>core/xhr.ts</code> 文件的第 66 行：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> responseData <span class="token operator">=</span> responseType <span class="token operator">!==</span> <span class="token string">'text'</span> <span class="token operator">?</span> request<span class="token punctuation">.</span>response <span class="token operator">:</span> request<span class="token punctuation">.</span>responseText
+</code></pre></div><p>分支也没有测试完全。这里我们应该先判断存在 <code>responseType</code> 存在的情况下再去和 <code>text</code> 做对比，需要修改逻辑：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">const</span> responseData <span class="token operator">=</span> responseType <span class="token operator">&amp;&amp;</span> responseType <span class="token operator">!==</span> <span class="token string">'text'</span> <span class="token operator">?</span> request<span class="token punctuation">.</span>response <span class="token operator">:</span> request<span class="token punctuation">.</span>responseText
+</code></pre></div><p>这样再次跑测试，就覆盖了所有的分支。</p> <p>到此为止，除了我们之前说的 <code>helpers/error.ts</code> 模块中对于 <code>super</code> 的测试的分支覆盖率没达到 100%，其它模块均达到 100% 的测试覆盖率。</p> <p>有些有强迫症的同学可能会觉得，能不能通过某种手段让它的覆盖率达到 100% 呢，这里其实有一个奇技淫巧，在 <code>helpers/error.ts</code> 文件的 <code>constructor</code> 函数上方加一个 <code>/* istanbul ignore next */</code> 注释，这样其实相当于忽略了整个构造函数的测试，这样我们就可以达到 100% 的覆盖率了。</p> <p><code>/* istanbul ignore next */</code> 在我们去阅读一些开源代码的时候经常会遇到，主要用途就是用来忽略测试用的，这个技巧不可滥用，除非你明确的知道这段代码不需要测试，否则你不应该使用它。滥用就失去了单元测试的意义了。</p> <p>至此，我们就完成了整个 <code>ts-axios</code> 库的测试了，我们也成功地让测试覆盖率达到目标 99% 以上。下一章我会教大家如果打包构建和发布我们的 <code>ts-axios</code> 库。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/bin/assets/js/app.b47fad0f.js" defer></script><script src="/bin/assets/js/2.22993a7e.js" defer></script><script src="/bin/assets/js/172.51ebd3b5.js" defer></script>
+  </body>
+</html>
